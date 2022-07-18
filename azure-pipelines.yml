@@ -9,6 +9,11 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+parameters:
+- name: testParameter
+  displayName: Test Parameter
+  type: boolean
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
@@ -16,4 +21,5 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
+    echo testParameter is: ${{ parameters.testParameter }}
   displayName: 'Run a multi-line script'
